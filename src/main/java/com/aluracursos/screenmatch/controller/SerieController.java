@@ -47,8 +47,11 @@ public class SerieController {
     @GetMapping("/{id}/temporadas/{temporada}")
     public List<EpisodioDTO> obtenerEpisodiosPorTemporada(@PathVariable Long id, @PathVariable Integer temporada){
         return servicio.obtenerEpisodiosPorTemporada(id, temporada);
+    }
 
-
+    @GetMapping("/categoria/{genero}")
+    public List<SerieDTO> obtenerSeriesPorGenero(@PathVariable String genero){
+        return servicio.obtenerSeriesPorGenero(genero);
     }
 
 }
